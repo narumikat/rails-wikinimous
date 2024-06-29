@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h1>Edit a article: <%= @article.title%></h1>
+  <%= form_with model: @article do |f| %>
+    <%= f.label :title, class: "form-label mt-4"%>
+    <%= f.text_field :title, class: "form-control"%>
+    <%= f.label :subtitle, class: "form-label mt-4"%>
+    <%= f.text_field :subtitle, class: "form-control"%>
+    <%= f.label :content, class: "form-label mt-4"%>
+    <%= f.text_area :content, class: "form-control", rows: 3 %>
+    <%= f.submit class: "btn btn-info mt-4"%>
+  <% end %>
+  <%= link_to 'Back to the Articles', articles_path, class: "btn btn-secondary mt-4" %>
+</div>

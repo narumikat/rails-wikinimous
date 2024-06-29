@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center my-4">
+    <i class="fa-solid fa-book mx-4"></i>
+    <%= link_to 'New Article', new_article_path, class: "btn btn-primary mx-4"%>
+  </div>
+  <div class="row mt-4 d-flex justify-content-center">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title"><%= @article.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= @article.subtitle %></h6>
+          <p class="card-text"><%= @article.content %></p>
+          <div class="mt-auto d-flex justify-content-between">
+            <%= link_to 'Edit Article', edit_article_path, class: "btn btn-secondary" %>
+            <%= link_to 'Delete', article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"%>
+          </div>
+        </div>
+      </div>
+      <%= link_to 'Back to the Articles', articles_path, class: "btn btn-secondary mt-4" %>
+    </div>
+  </div>
+</div>
+<style>
+  .card {
+    height: 300px;
+  }
+
+  i {
+    font-size: 3rem;
+    color: #0d6efd
+  }
+</style>
